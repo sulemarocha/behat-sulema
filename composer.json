@@ -7,7 +7,11 @@
     },
     "autoload": {
         "psr-4": {
-            "LaSalle\\ChupiProject\\": "src/"
+            "LaSalle\\ChupiProject\\": "src/",
+            "LaSalleTest\\ChupiProject\\": "test/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
     }
 }
