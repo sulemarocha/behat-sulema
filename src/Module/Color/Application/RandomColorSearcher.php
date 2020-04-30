@@ -1,6 +1,8 @@
 <?php
 
-namespace LaSalle\ChupiProject\Module\Color\Domain;
+namespace LaSalle\ChupiProject\Module\Color\Application;
+
+use LaSalle\ChupiProject\Module\Color\Domain\ColorRepository;
 
 final class RandomColorSearcher
 {

@@ -1,9 +1,9 @@
 <?php require 'vendor/autoload.php';
 
 use Colors\Color;
-use LaSalle\ChupiProject\Module\Color\Domain\RandomColorSearcher;
+use LaSalle\ChupiProject\Module\Color\Application\RandomColorSearcher;
 use LaSalle\ChupiProject\Module\Color\Infrastructure\InMemoryColorRepository;
-use LaSalle\ChupiProject\Module\CoolWord\Domain\RandomCoolWordSearcher;
+use LaSalle\ChupiProject\Module\CoolWord\Application\RandomCoolWordSearcher;
 use LaSalle\ChupiProject\Module\CoolWord\Infrastructure\InMemoryCoolWordRepository;
 
 $wordSearcher  = new RandomCoolWordSearcher(new InMemoryCoolWordRepository());

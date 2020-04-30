@@ -1,6 +1,8 @@
 <?php
 
-namespace LaSalle\ChupiProject\Module\CoolWord\Domain;
+namespace LaSalle\ChupiProject\Module\CoolWord\Application;
+
+use LaSalle\ChupiProject\Module\CoolWord\Domain\CoolWordRepository;
 
 final class RandomCoolWordSearcher
 {
