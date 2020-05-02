@@ -3,20 +3,23 @@
 namespace LaSalle\ChupiProject\Module\CoolWord\Application;
 
 use LaSalle\ChupiProject\Module\CoolWord\Domain\CoolWordRepository;
+use LaSalle\ChupiProject\Module\CoolWord\Domain\Exceptions\NotExistCoolWordException;
 
 final class RandomCoolWordSearcher
 {
-    private $repository;
+    private $coolWordRepository;
 
-    public function __construct(CoolWordRepository $repository)
+    public function __construct(CoolWordRepository $coolWordRepository)
     {
-        $this->repository = $repository;
+        $this->coolWordRepository = $coolWordRepository;
     }
 
     public function __invoke(): string
     {
-        $words = $this->repository->all();
-
+        $words = $this->coolWordRepository->all();
+        if(empty($words)){
+            throw new NotExistCoolWordException();
+        }
         return $words[mt_rand(0, count($words) - 1)];
     }
 }
