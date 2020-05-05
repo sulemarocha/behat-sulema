@@ -8,6 +8,7 @@ use Colors\Color;
 use LaSalle\ChupiProject\Module\Color\Application\RandomColorSearcher;
 use LaSalle\ChupiProject\Module\CoolWord\Application\RandomCoolWordSearcher;
 use LaSalle\ChupiProject\Module\CoolWord\Domain\Exceptions\NotExistCoolWordException;
+use LaSalleTest\ChupiProject\Module\Color\Infraestructure\InMemoryColorRepositoryDummy;
 use LaSalleTest\ChupiProject\Module\Color\Infraestructure\InMemoryColorRepositorySpy;
 use LaSalleTest\ChupiProject\Module\Color\Infraestructure\InMemoryColorRepositoryStub;
 use LaSalleTest\ChupiProject\Module\CoolWord\Infrastructure\InMemoryCoolWordRepositoryStub;
@@ -18,14 +19,16 @@ class chupiTest extends TestCase
     /**
      * @test
      */
-    public function shouldRandomCoolWordSearcher(){
+    public function shouldRandomCoolWordSearcher()
+    {
+        $inMemoryColorRepository = new InMemoryColorRepositoryDummy();
+        $randomColorSearcher = new RandomColorSearcher($inMemoryColorRepository);
 
         $inMemoryCoolWord = new InMemoryCoolWordRepositoryStub();
         $randomCoolWordSearcher = new RandomCoolWordSearcher($inMemoryCoolWord);
 
         $coolWord = $randomCoolWordSearcher();
         $this->assertNotEmpty($coolWord, "Cool word is Empty!");
-
 
     }
 
