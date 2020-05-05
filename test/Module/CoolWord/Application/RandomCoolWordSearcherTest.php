@@ -11,16 +11,13 @@ use PHPUnit\Framework\TestCase;
 
 class RandomCoolWordSearcherTest extends TestCase
 {
-
-
     /**
      * @test
      */
-    public function notExistCoolWord(){
-        $this->expectException(NotExistCoolWordException::class);
+    public function existCoolWord(){
         $inMemoryCoolWordRepository = new InMemoryCoolWordRepositoryStub();
         $randomCoolWordSearcher = new RandomCoolWordSearcher($inMemoryCoolWordRepository);
         $coolWord= $randomCoolWordSearcher();
-        $this->assertNotEmpty($coolWord, 'cool Word is empty!');
+        $this->assertNotEmpty($coolWord, "Cool Word is Empty!");
     }
 }
