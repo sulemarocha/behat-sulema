@@ -18,8 +18,8 @@ final class RandomColorSearcherTest extends TestCase
     public function isColorValid(){
         $inMemoryColorRepository =  new InMemoryColorRepositoryStub();
         $randomColorSearcher = new RandomColorSearcher($inMemoryColorRepository);
-        $color = $randomColorSearcher(); //["blue", "green"]
-        $arrayColors = ['red', 'cyan', 'magenta', 'green', 'black', 'yellow', 'blue', 'light_gray'];
+        $color = $randomColorSearcher();
+        $arrayColors = ['red', 'cyan', 'magenta'];
         $this->assertContains($color, $arrayColors, 'Not is a color!');
     }
     /**
