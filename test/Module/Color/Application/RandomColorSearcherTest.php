@@ -29,11 +29,9 @@ final class RandomColorSearcherTest extends TestCase
     {
         $this->expectException(NotExistColorException::class);
 
-        $this->expectException(NotExistColorException::class);
         $inMemoryRepository = new InMemoryColorEmptyRepositoryStub();
         $randomColorSearcher = new RandomColorSearcher($inMemoryRepository);
         $color = $randomColorSearcher();
 
     }
-
 }
