@@ -6,7 +6,7 @@ namespace LaSalleTest\ChupiProject\Module\CoolWord\Infrastructure;
 
 use LaSalle\ChupiProject\Module\CoolWord\Domain\CoolWordRepository;
 
-class InMemoryCoolWordRepository implements CoolWordRepository
+class CoolWordRepository implements CoolWordRepository
 {
     private $list = [];
     public function __construct()

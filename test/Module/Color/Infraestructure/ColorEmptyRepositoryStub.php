@@ -6,7 +6,7 @@ namespace LaSalleTest\ChupiProject\Module\Color\Infraestructure;
 
 use LaSalle\ChupiProject\Module\Color\Domain\ColorRepository;
 
-class InMemoryColorEmptyRepositoryStub implements ColorRepository
+class ColorEmptyRepositoryStub implements ColorRepository
 {
 
     public function all(): array
