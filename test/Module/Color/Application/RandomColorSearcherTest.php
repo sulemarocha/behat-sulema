@@ -29,11 +29,13 @@ final class RandomColorSearcherTest extends TestCase
      * @test
      */
     public function isColorValidWithMockery(){
+        $arrayColors = ['blue', 'red', 'cyan'];
         $repositoryColor = \Mockery::mock(ColorRepository::class);
-        $repositoryColor->shouldReceive('all')->andReturn(['blue', 'red', 'cyan']);
+        $repositoryColor->shouldReceive('all')->andReturn($arrayColors);
         $randomColorSearcher = new RandomColorSearcher($repositoryColor);
+
         $expectColor = $randomColorSearcher();
-        $arrayColors = ['red', 'cyan', 'magenta', 'blue'];
+
         $this->assertContains($expectColor, $arrayColors, 'Not is a color!');
     }
     /**
