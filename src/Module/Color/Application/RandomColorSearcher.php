@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaSalle\ChupiProject\Module\Color\Application;
 
 use LaSalle\ChupiProject\Module\Color\Domain\ColorRepository;
