@@ -14,7 +14,8 @@ class RandomCoolWordSearcherFakeTest extends TestCase
     /**
      * @test
      */
-    public function existCoolWordFake(){
+    public function existCoolWordFake()
+    {
         $inMemoryCoolWordRepository = new CoolWordRepositoryFake();
         $randomCoolWordSearcher = new RandomCoolWordSearcher($inMemoryCoolWordRepository);
         $coolWord = $randomCoolWordSearcher();

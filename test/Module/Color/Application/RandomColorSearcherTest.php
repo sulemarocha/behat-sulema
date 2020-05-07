@@ -16,7 +16,8 @@ final class RandomColorSearcherTest extends TestCase
     /**
      * @test
      */
-    public function isColorValid(){
+    public function isColorValid()
+    {
         $inMemoryColorRepository =  new ColorRepositoryStub();
         $randomColorSearcher = new RandomColorSearcher($inMemoryColorRepository);
         $color = $randomColorSearcher();

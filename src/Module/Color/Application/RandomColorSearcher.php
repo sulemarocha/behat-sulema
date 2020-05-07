@@ -16,7 +16,7 @@ final class RandomColorSearcher
         $this->colorRepository = $colorRepository;
     }
 
-    public function __invoke()
+    public function __invoke() : array
     {
         $colors = $this->colorRepository->all();
         if(empty($colors)){

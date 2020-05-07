@@ -13,7 +13,8 @@ class NotExistColorException extends DomainException
     {
         parent::__construct($this->errorMessage());
     }
-    public function errorMessage(){
+    public function errorMessage(): string
+    {
         return "Color is Empty!";
     }
 }

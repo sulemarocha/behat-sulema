@@ -14,7 +14,8 @@ class NotExistCoolWordException extends DomainException
     {
         parent::__construct($this->errorMessage());
     }
-    public function errorMessage(){
+    public function errorMessage(): string
+    {
         return "Cool Word is Empty!";
     }
 }
