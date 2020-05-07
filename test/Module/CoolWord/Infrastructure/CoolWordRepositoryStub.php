@@ -6,7 +6,7 @@ namespace LaSalleTest\ChupiProject\Module\CoolWord\Infrastructure;
 
 use LaSalle\ChupiProject\Module\CoolWord\Domain\CoolWordRepository;
 
-class InMemoryCoolWordRepositoryStub implements CoolWordRepository
+class CoolWordRepositoryStub implements CoolWordRepository
 {
 
     public function all(): array

@@ -5,7 +5,7 @@ namespace LaSalleTest\ChupiProject\Module\CoolWord\Application;
 
 
 use LaSalle\ChupiProject\Module\CoolWord\Application\RandomCoolWordSearcher;
-use LaSalleTest\ChupiProject\Module\CoolWord\Infrastructure\InMemoryCoolWordRepository;
+use LaSalleTest\ChupiProject\Module\CoolWord\Infrastructure\CoolWordRepositoryFake;
 use PHPUnit\Framework\TestCase;
 
 class RandomCoolWordSearcherFakeTest extends TestCase
@@ -14,7 +14,7 @@ class RandomCoolWordSearcherFakeTest extends TestCase
      * @test
      */
     public function existCoolWordFake(){
-        $inMemoryCoolWordRepository = new InMemoryCoolWordRepository();
+        $inMemoryCoolWordRepository = new CoolWordRepositoryFake();
         $randomCoolWordSearcher = new RandomCoolWordSearcher($inMemoryCoolWordRepository);
         $coolWord = $randomCoolWordSearcher();
 
