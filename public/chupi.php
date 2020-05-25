@@ -12,11 +12,11 @@ use LaSalle\ChupiProject\Module\CoolWord\Infrastructure\InMemoryCoolWordReposito
 $randomCoolWordWithColor = new RandomCoolWordWithColor(new GenerateCoolWordWithColorRepository());
 $randomColorSearcher = new RandomColorSearcher(new InMemoryColorRepository());
 $randomCoolWordSearcher = new RandomCoolWordSearcher(new InMemoryCoolWordRepository());
-$colorWordFormatJSON = $randomCoolWordWithColor->__invoke($randomColorSearcher, $randomCoolWordSearcher);
+$colorWordFormatArray = $randomCoolWordWithColor->__invoke($randomColorSearcher, $randomCoolWordSearcher);
 
 $c = new Color();
-$coolWord = $colorWordFormatJSON['coolWord'];
-$bgColor = $colorWordFormatJSON['bgColor'];
-$textColor = $colorWordFormatJSON['textColor'];
+$coolWord = $colorWordFormatArray['coolWord'];
+$bgColor = $colorWordFormatArray['bgColor'];
+$textColor = $colorWordFormatArray['textColor'];
 
 echo $c($coolWord)->bg($bgColor)->$textColor . PHP_EOL;
