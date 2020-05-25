@@ -12,8 +12,7 @@ use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\HttpFoundation\Request;
 
-// If you add a new route don't forget to include it's namespace
-//use TestApp\HomeController;
+
 use LaSallePublic\ChupiProject\Controllers\HomeController;
 use LaSallePublic\ChupiProject\Controllers\ColorController;
 
