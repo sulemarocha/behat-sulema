@@ -8,6 +8,7 @@
     "autoload": {
         "psr-4": {
             "LaSalle\\ChupiProject\\": "src/",
+            "LaSallePublic\\ChupiProject\\": "public/",
             "LaSalleTest\\ChupiProject\\": "test/"
         }
     },
