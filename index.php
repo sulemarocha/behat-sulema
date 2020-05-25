@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use LaSallePublic\ChupiProject\Controllers\ChupiController;
+use LaSallePublic\ChupiProject\Controllers\WordController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
@@ -13,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 // If you add a new route don't forget to include it's namespace
 //use TestApp\HomeController;
 use LaSallePublic\ChupiProject\Controllers\HomeController;
+use LaSallePublic\ChupiProject\Controllers\ColorController;
 
 /*
  * -----------
@@ -21,8 +24,9 @@ use LaSallePublic\ChupiProject\Controllers\HomeController;
  */
 $routes = [
     'home'      => (new Route('/',           ['controller' => HomeController::class]))->setMethods([Request::METHOD_GET]),
-    'get_user'  => (new Route('/users',     ['controller' => UserController::class]))->setMethods([Request::METHOD_GET]),
-    'post_user' => (new Route('/users/{id}', ['controller' => UserController::class, 'method' => 'create']))->setMethods([Request::METHOD_POST]),
+    'get_color'  => (new Route('/color',     ['controller' => ColorController::class]))->setMethods([Request::METHOD_GET]),
+    'get_word'  => (new Route('/word',     ['controller' => WordController::class]))->setMethods([Request::METHOD_GET]),
+    'get_chupi_json'  => (new Route('/chupi',     ['controller' => ChupiController::class]))->setMethods([Request::METHOD_GET]),
 ];
 
 /*
