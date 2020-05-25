@@ -4,29 +4,19 @@ use Colors\Color;
 use LaSalle\ChupiProject\Module\Color\Application\RandomColorSearcher;
 use LaSalle\ChupiProject\Module\Color\Infrastructure\InMemoryColorRepository;
 use LaSalle\ChupiProject\Module\CoolWord\Application\RandomCoolWordSearcher;
+use LaSalle\ChupiProject\Module\CoolWord\Application\RandomCoolWordWithColor;
+use LaSalle\ChupiProject\Module\CoolWord\Infrastructure\GenerateCoolWordWithColorRepository;
 use LaSalle\ChupiProject\Module\CoolWord\Infrastructure\InMemoryCoolWordRepository;
 
-$wordSearcher  = new RandomCoolWordSearcher(new InMemoryCoolWordRepository());
-$colorSearcher = new RandomColorSearcher(new InMemoryColorRepository());
 
-$bgColor = $colorSearcher();
-$fgColor = _random_color_except($bgColor, $colorSearcher);
-
-echo $bgColor;
-echo '////'.$fgColor;
+$randomCoolWordWithColor = new RandomCoolWordWithColor(new GenerateCoolWordWithColorRepository());
+$randomColorSearcher = new RandomColorSearcher(new InMemoryColorRepository());
+$randomCoolWordSearcher = new RandomCoolWordSearcher(new InMemoryCoolWordRepository());
+$colorWordFormatJSON = $randomCoolWordWithColor->__invoke($randomColorSearcher, $randomCoolWordSearcher);
 
 $c = new Color();
-echo $c($wordSearcher())->bg($bgColor)->$fgColor . PHP_EOL;
+$coolWord = $colorWordFormatJSON['coolWord'];
+$bgColor = $colorWordFormatJSON['bgColor'];
+$textColor = $colorWordFormatJSON['textColor'];
 
-
-
-function _random_color_except(string $except, callable $randomColorSearcher): string
-{
-    $return = $except;
-
-    while ($except === $return) {
-        $return = $randomColorSearcher();
-    }
-
-    return $return;
-}
+echo $c($coolWord)->bg($bgColor)->$textColor . PHP_EOL;
