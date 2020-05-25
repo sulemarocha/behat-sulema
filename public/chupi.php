@@ -1,4 +1,4 @@
-<?php require 'vendor/autoload.php';
+<?php require '../vendor/autoload.php';
 
 use Colors\Color;
 use LaSalle\ChupiProject\Module\Color\Application\RandomColorSearcher;
