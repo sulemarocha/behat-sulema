@@ -19,36 +19,40 @@ class FeatureContext implements Context
      * You can also pass arbitrary arguments to the
      * context constructor through behat.yml.
      */
-    private $colors;
-    private $randomColorSearcher;
-    private $colorGenerated;
     public function __construct()
     {
-        $this->randomColorSearcher = new RandomColorSearcher(new InMemoryColorRepository());
+
     }
 
     /**
-     * @Given I have an array of colors
+     * @When I send a :arg1 request to :arg2
      */
-    public function iHaveAnArrayOfColors()
+    public function iSendARequestTo($arg1, $arg2)
     {
-        $this->colors =  ['red', 'cyan', 'magenta', 'green', 'black', 'yellow', 'blue', 'light_gray'];
+        throw new PendingException();
     }
 
     /**
-     * @When I generate a color from use case
+     * @Then the response status code should be :arg1
      */
-    public function iGenerateAColorFromUseCase()
+    public function theResponseStatusCodeShouldBe($arg1)
     {
-        $this->colorGenerated = $this->randomColorSearcher->__invoke();
+        throw new PendingException();
     }
 
     /**
-     * @Then The result should be a color
+     * @Then the response content should be: :arg1
      */
-    public function theResultShouldBeAColor()
+    public function theResponseContentShouldBe($arg1)
     {
-        Assert::assertContains($this->colorGenerated, $this->colors, 'not is a color');
+        throw new PendingException();
     }
 
+    /**
+     * @Then the response content should be:
+     */
+    public function theResponseContentShouldBe2(PyStringNode $string)
+    {
+        throw new PendingException();
+    }
 }
