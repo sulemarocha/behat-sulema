@@ -1,5 +1,5 @@
-Feature: Random Color Searcher
-    Scenario: Generate a color random
-        Given I have an array of colors
-        When I generate a color from use case
-        Then The result should be a color
+Feature: Generate Random color
+    Scenario: Generate Random color
+        When I send a "GET" request to "/color"
+        Then the response status code should be 200
+        And the response content should be: "blue"
