@@ -24,7 +24,7 @@ use LaSallePublic\ChupiProject\Controllers\ColorController;
 $routes = [
     'home'      => (new Route('/',           ['controller' => HomeController::class]))->setMethods([Request::METHOD_GET]),
     'get_color'  => (new Route('/color',     ['controller' => ColorController::class]))->setMethods([Request::METHOD_GET]),
-    'get_word'  => (new Route('/word',     ['controller' => WordController::class]))->setMethods([Request::METHOD_GET]),
+    'get_word'  => (new Route('/cool-word',     ['controller' => WordController::class]))->setMethods([Request::METHOD_GET]),
     'get_chupi_json'  => (new Route('/chupi_json',     ['controller' => ChupiController::class]))->setMethods([Request::METHOD_GET]),
 ];
 
